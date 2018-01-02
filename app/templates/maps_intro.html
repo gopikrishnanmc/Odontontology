@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <h1>General Dental Practices</h1>
+    <h2>In England, Wales and Isle of Man</h2>
+    <h3>Visualizing dental practices in England, Wales and Isle of Man in Python using Folium</h3>
+</div>
+<div class="container">
+    <img src="{{url_for('static', filename='img/Capture.jpg')}}"
+         class="img-thumbnail" alt="Dental practices" width="304" height="236">
+</div>
+<div class="container">
+    <p class="lead">Data from <a href="https://data.gov.uk/dataset/general-dental-practices" target="_blank">DATA.GOV.UK</a>
+    </p>
+    <p>Map created using <a href="https://folium.readthedocs.io/en/latest/" target="_blank">Folium</a>. Folium is a Python library that is an interface to the <a href="http://leafletjs.com/"
+                                                                                                                                                                  target="_blank">Leaflet</a>
+        Javascript mapping library and can create interactive maps.
+    </p>
+    <p>I used data from data.gov.uk to find the addresses of dental practices and mapped them on an OpenStreetMap using Folium and Python using coordinates obtained through geocoding APIs.
+    </p>
+    <p>Geocoding of dental practices performed using <a href="https://www.openstreetmap.org" target="_blank">OpenStreetMap</a> <a href="http://wiki.openstreetmap.org/wiki/Nominatim"
+                                                                                                                                  target="_blank">Geocoding API</a> and
+        <a href="https://developers.google.com/maps/documentation/geocoding/intro" target="_blank">Google Maps Geocoding API</a> using <a href="https://geopy.readthedocs.io/en/1.10.0/"
+                                                                                                                                          target="_blank">geopy</a> python library.
+    </p>
+    <p>The data was stored in a sqlite database with the help of <a href="https://www.sqlalchemy.org/" target="_blank">SQLAlchemy</a> Object Relational Mapper.
+    </p>
+    <p class="text-danger"> The map displays dental practices that are active at the moment. Locations are approximate.</p>
+</div>
+<div class="container">
+    <p>The code can be viewed here: <a href="https://github.com/gopikrishnanmc/Dental_tweet" target="_blank">Github</a></p>
+</div>
+<div class="container">
+    <p>Click here for Map: <a href="{{url_for('show_dental_clinics')}}" class="btn btn-info" role="button" target="_blank">General Dental Practices Map</a></p>
+</div>
+
+
+{% endblock %}
