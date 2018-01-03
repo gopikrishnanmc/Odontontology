@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% block content %}
+<!-- Page Header -->
+<header class="masthead" style="background-image: url('/static/img/contact-bg.jpg')">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-10 mx-auto">
+                <div class="page-heading">
+                    <h1>Add Post</h1>
+                    <span class="subheading">You can create a blog post here.</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Main Content -->
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+            <form name="addForm" id="addForm" method="post" action="{{url_for('add_post')}}" novalidate>
+                <div class="control-group">
+                    <div class="form-group floating-label-form-group controls">
+                        <label>Title</label>
+                        <input type="text" class="form-control" placeholder="Title" name="title" id="title" required>
+                        <p class="help-block text-danger"></p>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <div class="form-group floating-label-form-group controls">
+                        <label>Subtitle</label>
+                        <input type="text" class="form-control" placeholder="Subtitle" name="subtitle" id="subtitle" required>
+                        <p class="help-block text-danger"></p>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <div class="form-group floating-label-form-group controls">
+                        <label>Blog Content</label>
+                        <textarea rows="10" class="form-control" placeholder="Blog Content" name="content" id="content" required></textarea>
+                        <p class="help-block text-danger"></p>
+                    </div>
+                </div>
+                <br>
+                <div id="success"></div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary" id="sendMessageButton">Send</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock%}
